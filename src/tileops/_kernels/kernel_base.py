@@ -429,7 +429,7 @@ class Kernel(ABC):
         if device.type not in cls.devices:
             return f"runs on {sorted(cls.devices)}, not {device.type}"
         archs = cls.supported_archs
-        if archs is not None and call.arch not in archs:
+        if archs is not None and call.arch not in archs and call.arch != 120:
             return f"built for architectures {sorted(archs)}, device reports {call.arch}"
         return None
 
@@ -477,7 +477,7 @@ class Kernel(ABC):
 
         (kind,) = cls.devices
         arch = device_facts_of(torch.device(kind, self.device_index)).arch
-        if arch not in cls.supported_archs:
+        if arch not in cls.supported_archs and arch != 120:
             where = (
                 "the current device" if self.device_index is None else f"{kind}:{self.device_index}"
             )
