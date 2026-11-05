@@ -26,6 +26,12 @@
 
 ______________________________________________________________________
 
+> [!NOTE]
+> This fork's `sm120-experimental` branch permits experimental execution on NVIDIA SM120.
+> See the [SM120 compatibility results](docs/sm120-compatibility.md) and
+> [reproducible CUDA 13.2 environment](docker/sm120/README.md). This is not a claim that
+> every kernel targeting SM90 or another architecture is compatible with SM120.
+
 ## Agent and compiler, working together
 
 | **TileOPs**<br>agents answer to specs                                                                                                                                                     | **[TileFoundry](https://github.com/tile-ai/TileFoundry)**<br>the compiler answers to agents                      |

@@ -1,0 +1,13 @@
+services:
+  tileops-sm120:
+    build:
+      context: ../..
+      dockerfile: docker/sm120/Dockerfile
+    image: tileops-sm120:cuda13.2
+    container_name: tileops-sm120
+    gpus: all
+    working_dir: /workspace/TileOPs
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../..:/workspace/TileOPs
