@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tileops-ascend"
+version = "0.1.0.dev0"
+description = "Ascend backend plugin for TileOPs"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.entry-points."tileops.backends"]
+ascend = "tileops_ascend"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
